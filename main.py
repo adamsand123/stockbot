@@ -11,7 +11,7 @@ client = discord.Client()
 async def on_message(message):
     if message.author == client.user:
         return
-    if '420' or '69' in message.content():
+    if message.content == '420' or message.content == '69':
         await message.channel.send('nice')
 
 
