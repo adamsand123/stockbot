@@ -16,10 +16,13 @@ async def on_message(message):
         return
     if message.content == '420' or message.content == '69':
         await message.channel.send('nice')
+        await message.channel.send('Support slackers: https://github.com/adamsand123/stockbot')
     if message.content == 'gme':
         await message.channel.send(td.get_value('GME'))
+        await message.channel.send('Support slackers: https://github.com/adamsand123/stockbot')
     if message.content == 'amc':
         await message.channel.send(td.get_value('AMC'))
+        await message.channel.send('Support slackers: https://github.com/adamsand123/stockbot')
 
 
 client.run(token)
