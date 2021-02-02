@@ -16,8 +16,10 @@ async def on_message(message):
         return
     if message.content == '420' or message.content == '69':
         await message.channel.send('nice')
-    if message.content == 'rip':
-        print(td.get_gme())
+    if message.content == 'gme':
+        await message.channel.send(td.get_value('GME'))
+    if message.content == 'amc':
+        await message.channel.send(td.get_value('AMC'))
 
 
 client.run(token)
