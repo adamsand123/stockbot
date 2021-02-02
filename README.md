@@ -1,0 +1,8 @@
+# stockbot
+Skapa fil med namn: .env
+
+Innehåll:
+
+DISCORD_TOKEN=DIN_DISCORD_API_NYCKEL
+
+12DATA_TOKEN=DIN_12DATA_API_NYCKEL
