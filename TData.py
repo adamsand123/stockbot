@@ -1,11 +1,12 @@
 import os
-from twelvedata import TDClient
 from dotenv import load_dotenv
 import requests
-import pandas
 
 
 class TData:
+    """
+    https://twelvedata.com/docs
+    """
     def __init__(self):
         load_dotenv()
         self.token = os.getenv('12DATA_TOKEN')
