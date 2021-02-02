@@ -1,6 +1,7 @@
 import os
 import discord
 from dotenv import load_dotenv
+import TData
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
