@@ -38,6 +38,6 @@ async def on_message(message):
             await message.channel.send(meta)
             return
         await message.channel.send(meta + "\n" + last3)
-        await message.channel.send('https://github.com/adamsand123/stockbot :eyes:')
+        #await message.channel.send('https://github.com/adamsand123/stockbot :eyes:')
 
 client.run(token)

@@ -46,19 +46,19 @@ class TData:
 
         if stock_json is not None:
             tmp_str = json.dumps(stock_json["values"][0], indent=4)
-            newest_value = float(stock_json["values"][0]["open"])
+            newest_value = float(stock_json["values"][0]["close"])
             to_the_moon = True
             values = list()
             for n in range(1, 3):
                 tmp_str += json.dumps(stock_json["values"][n], indent=4)
-                values.append(float(stock_json["values"][n]["open"]))
+                values.append(float(stock_json["values"][n]["close"]))
             for value in values:
                 if value > newest_value:
                     to_the_moon = False
             if to_the_moon:
                 return tmp_str + "\n\n :crescent_moon: TOOOO THE MOOOOOOOOON!! :partying_face: DIAMOND HAAANDZZ :partying_face: "
             else:
-                return tmp_str
+                return tmp_str +"\n\n:poop: :poop: SHIT STOCK :poop: :poop: "
 
 if __name__ == '__main__':
     td = TData()
