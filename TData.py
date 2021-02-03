@@ -56,7 +56,7 @@ class TData:
                 if value > newest_value:
                     to_the_moon = False
             if to_the_moon:
-                return tmp_str + "\nTOOOO THE MOOOOOOOOON!! DIAMOND HAAANDZZ"
+                return tmp_str + "\n\n :crescent_moon: TOOOO THE MOOOOOOOOON!! :partying_face: DIAMOND HAAANDZZ :partying_face: "
             else:
                 return tmp_str
 
