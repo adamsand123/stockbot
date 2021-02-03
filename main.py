@@ -1,13 +1,14 @@
 import os
 import discord
 from dotenv import load_dotenv
-import TData
+from TData import TData
 
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 client = discord.Client()
 
-td = TData.TData()
+td = TData()
+
 stock_list = list()
 with open('stocklist', 'r') as f:
     tmp = f.readlines()
@@ -19,13 +20,25 @@ for data in tmp:
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content == '420' or message.content == '69':
-        await message.channel.send('nice')
-        await message.channel.send('Support slackers: https://github.com/adamsand123/stockbot')
-    if message.content.lower() in stock_list:
-        for stock in stock_list:
-            if message.content == stock:
-                await message.channel.send(td.get_value(stock.upper()))
+
+    if '420' in message.content or '69' in message.content:
+        await message.channel.send(f'nice {message.author}')
+        return
+
+    commands = message.content.lower().split()
+    if commands[0] in stock_list:
+        if str(message.author) == 'Kaztiell#0716':
+            await message.channel.send('https://www.swish.nu/')
+        elif len(commands) == 2:
+            meta = td.get_meta(commands[0], commands[1])
+            last3 = td.get_last3(commands[0], commands[1])
+        else:
+            meta = td.get_meta(commands[0])
+            last3 = td.get_last3(commands[0])
+        if 'Usage:' in meta:
+            await message.channel.send(meta)
+            return
+        await message.channel.send(meta + "\n" + last3)
 
 
 client.run(token)
